@@ -1,0 +1,49 @@
+
+Scatter plots
+ 
+
+ sns.scatterplot(x=insurance_data['bmi'], y=insurance_data['charges'])
+
+
+
+
+
+To double-check the strength of this relationship, you might like to add a regression line, or the line that best fits the data. We do this by changing the command to sns.regplot.
+
+
+sns.regplot(x=insurance_data['bmi'], y=insurance_data['charges'])
+
+
+
+
+
+
+
+Color-coded scatter plots
+
+We can use scatter plots to display the relationships between (not two, but...) three variables! One way of doing this is by color-coding the points.
+
+For instance, to understand how smoking affects the relationship between BMI and insurance costs, we can color-code the points by 'smoker', and plot the other two columns ('bmi', 'charges') on the axes.
+
+sns.scatterplot(x=insurance_data['bmi'], y=insurance_data['charges'], hue=insurance_data['smoker'])
+
+
+
+
+
+ to add two regression lines, corresponding to smokers and nonsmokers.
+ 
+sns.lmplot(x="bmi", y="charges", hue="smoker", data=insurance_data)
+
+
+
+
+
+ categorical scatter plot, and we build it with the sns.swarmplot command.
+
+sns.swarmplot(x=insurance_data['smoker'],
+              y=insurance_data['charges'])
+
+
+
+

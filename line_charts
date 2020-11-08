@@ -1,0 +1,56 @@
+# Print the last five rows of the data
+spotify_data.tail()
+
+
+
+code to make a line chart!
+
+# Line chart showing daily global streams of each song 
+sns.lineplot(data=spotify_data)
+
+
+    sns.lineplot tells the notebook that we want to create a line chart.
+        Every command that you learn about in this course will start with sns, which indicates that the command comes from the seaborn package. For instance, we use sns.lineplot to make line charts. Soon, you'll learn that we use sns.barplot and sns.heatmap to make bar charts and heatmaps, respectively.
+    data=spotify_data selects the data that will be used to create the chart.
+
+
+
+
+# Set the width and height of the figure
+plt.figure(figsize=(14,6))
+
+# Add title
+plt.title("Daily Global Streams of Popular Songs in 2017-2018")
+
+# Line chart showing daily global streams of each song 
+sns.lineplot(data=spotify_data)
+
+<matplotlib.axes._subplots.AxesSubplot at 0x7ff15805d310>
+
+
+
+how to plot a subset of the columns.
+
+
+
+In the next code cell, we plot the lines corresponding to the first two columns in the dataset.
+
+# Set the width and height of the figure
+plt.figure(figsize=(14,6))
+
+# Add title
+plt.title("Daily Global Streams of Popular Songs in 2017-2018")
+
+# Line chart showing daily global streams of 'Shape of You'
+sns.lineplot(data=spotify_data['Shape of You'], label="Shape of You")
+
+# Line chart showing daily global streams of 'Despacito'
+sns.lineplot(data=spotify_data['Despacito'], label="Despacito")
+
+# Add label for horizontal axis
+plt.xlabel("Date")
+
+
+add label="Shape of You" to make the line appear in the legend and set its corresponding label.
+
+The final line of code modifies the label for the horizontal axis (or x-axis), where the desired label is placed in quotation marks ("...").
